@@ -1,0 +1,13 @@
+#!/bin/bash
+regex=$(cat ./regex)
+echo -e "\v$regex\v"
+while read -r line
+ do
+  test="$line"
+  if [[ "$line" =~ $regex ]];
+   then
+    echo -e "$line\033[0;32m\tmatch\033[0m"
+   else
+    echo -e "$line\033[0;31m\tNO match\033[0m"
+   fi
+ done < ./tests
