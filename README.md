@@ -1,2 +1,2 @@
-# bash_r_c
+# bash_r_t
 Bash regex check script
