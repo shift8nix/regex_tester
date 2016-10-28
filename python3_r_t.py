@@ -1,0 +1,27 @@
+#! /usr/bin/python3
+
+import re
+
+# get regex from file
+with open('./regex', 'r') as myfile:
+    regex=myfile.read().replace('\n', '')
+
+# compile regex
+my_test = re.compile(regex)
+
+print("""
+Testing the following python3 regex
+================================
+\v%s\v
+================================""" % (regex))
+
+# get patterns to test from file
+with open('./patterns', 'r') as myfile:
+    patterns=myfile.read().splitlines() 
+
+# test regex
+for pattern in patterns:
+    if my_test.search(pattern):
+        print("%-25s \033[0;32mMATCHED\033[0m" % (pattern)) # if matched
+    else:
+        print("%-25s \033[0;31mNOT MATCHED\033[0m" % (pattern)) # if not matched

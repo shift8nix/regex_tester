@@ -12,4 +12,4 @@ while read -r line
    else
     printf '%-25s  \033[0;31m%-10s\033[0m \n' "$line" "NOT MATCHED"
    fi
- done < ./tests
+ done < ./patterns
