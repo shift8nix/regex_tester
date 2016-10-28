@@ -22,6 +22,6 @@ with open('./patterns', 'r') as myfile:
 # test regex
 for pattern in patterns:
     if my_test.search(pattern):
-        print("%-25s \033[0;32mMATCHED\033[0m" % (pattern)) # if matched
+        print("\033[0;32m%-6s\033[0m %s" % ("MATCH", pattern)) # if match
     else:
-        print("%-25s \033[0;31mNOT MATCHED\033[0m" % (pattern)) # if not matched
+        print("\033[0;31m%-6s\033[0m %s" % ("FAIL", pattern)) # if not matched

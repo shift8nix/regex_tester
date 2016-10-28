@@ -26,16 +26,18 @@ Testing the following bash regex
 ^(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)((\.(0|[1-9][0-9]*))?(\-[0-9A-Za-z-]+(\.[0-9A-Za-z-]+)*)?(\+[0-9A-Za-z-]+(\.[0-9A-Za-z-]+)*)?)?$
 
 ================================
-2.0.0                      MATCHED    
-2.0.0-rc.2                 MATCHED    
-2.0.0-rc.1                 MATCHED    
-1.0.0                      MATCHED    
-1.0.0-beta                 MATCHED    
-5.rc55                     NOT MATCHED 
+MATCH  2.0.0
+MATCH  2.0.0-rc.2
+MATCH  2.0.0-rc.1
+MATCH  1.0.0
+MATCH  1.0.0-beta
+FAIL   5.rc55
 ```
 or
 ```
 $ ./python2_r_t
-...
+```
+or
+```
 $ ./python3_r_t
 ```

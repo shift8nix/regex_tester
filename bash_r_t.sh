@@ -8,8 +8,8 @@ while read -r line
  do
   if [[ "$line" =~ $regex ]];
    then
-    printf '%-25s  \033[0;32m%-10s\033[0m \n' "$line" "MATCHED"
+    printf '\033[0;32m%-6s\033[0m %s\n' "MATCH" "$line" 
    else
-    printf '%-25s  \033[0;31m%-10s\033[0m \n' "$line" "NOT MATCHED"
+    printf '\033[0;31m%-6s\033[0m %s\n' "FAIL" "$line"
    fi
  done < ./patterns
