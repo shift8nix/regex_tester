@@ -1,0 +1,19 @@
+#!/usr/bin/env groovy
+
+// get regex from file
+regex = new File('regex').text.trim()
+
+printf ("""
+Testing the following groovy regex
+================================
+\n%s\n
+================================\n""",  regex)
+
+
+// test regex
+new File('patterns').each{
+    if (it.matches(regex))
+        printf ('\033[0;32m%-6s\033[0m %s\n', ["MATCH", it]) // if match
+    else 
+        printf ('\033[0;31m%-6s\033[0m %s\n', ["FAIL", it]) // if not matched
+}

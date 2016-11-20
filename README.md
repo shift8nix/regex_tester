@@ -1,6 +1,6 @@
 # regex_tester
 
-From command line test regex in either Bash, Python2 or Python3
+From command line test regex in either Bash, Python2, Python3 or Groovy
 
 In file "regex" write your regex like this:
 ```
@@ -40,4 +40,9 @@ $ ./python2_r_t
 or
 ```
 $ ./python3_r_t
+```
+
+or
+```
+$ ./groovy_r_t
 ```

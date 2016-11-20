@@ -1,15 +1,21 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
+# get regex from file
 regex=$(cat ./regex)
+
+
 echo -e "Testing the following bash regex
 ================================
-\v$regex\v
+\n$regex\n
 ================================"
-while read -r line
+
+
+while read -r line # for each pattern line
  do
-  if [[ "$line" =~ $regex ]];
+  if [[ "$line" =~ $regex ]]; # test regex
    then
     printf '\033[0;32m%-6s\033[0m %s\n' "MATCH" "$line" 
    else
     printf '\033[0;31m%-6s\033[0m %s\n' "FAIL" "$line"
    fi
- done < ./patterns
+ done < ./patterns # feed patterns from file
